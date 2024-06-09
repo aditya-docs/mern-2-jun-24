@@ -1,8 +1,6 @@
 const express = require("express");
-const {
-  getCurrencies,
-  getCurrencyBySymbol,
-} = require("./controllers/currencies.controllers");
+const currencyRouter = require("./routes/currencies.routes");
+const userRouter = require("./routes/users.routes");
 
 const app = express();
 const PORT = 8082;
@@ -11,9 +9,9 @@ app.get("/", (req, res) => {
   res.send("<h1>Currency Database</h1>");
 });
 
-app.get("/currencies", getCurrencies);
+app.use("/currencies", currencyRouter);
 
-app.get("/currencies/:symbol", getCurrencyBySymbol);
+app.use("/users", userRouter);
 
 app.listen(PORT, () => {
   console.log(`server running on: ${PORT}`);
