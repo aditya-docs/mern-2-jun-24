@@ -1,0 +1,30 @@
+{
+  "cities": [
+    {
+      "name": "New York",
+      "id": "5mG42Uhv3f_jidNmBnZJY"
+    },
+    {
+      "name": "Lucknow",
+      "id": "pcT3l72pEYjvhxCTODqJu"
+    },
+    {
+      "name": "New Delhi",
+      "id": "9TB2ognyaoBdZqw5_6dQv"
+    },
+    {
+      "name": "Chennai",
+      "id": "nwxH_vggnIwOoc68qzy5p"
+    },
+    {
+      "name": "Chennai",
+      "landmarks": [
+        {
+          "name": "parthasarathy temple",
+          "price": 0
+        }
+      ],
+      "id": "9Kdwf98k5KV7uAe5Yqq6j"
+    }
+  ]
+}

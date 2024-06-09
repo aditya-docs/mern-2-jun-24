@@ -1,0 +1,14 @@
+GET http://localhost:8088/cities
+###
+POST http://localhost:8088/cities
+Content-Type: application/json
+
+{
+    "name": "Chennai",
+    "landmarks": [
+        {
+            "name": "parthasarathy temple",
+            "price": 0
+        }
+    ]
+}
