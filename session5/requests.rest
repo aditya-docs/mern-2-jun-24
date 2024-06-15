@@ -1,0 +1,51 @@
+GET http://localhost:8082/currencies?min_value=1
+###
+GET http://localhost:8082/currencies
+###
+GET http://localhost:8082/currencies/usd
+###
+GET http://localhost:8082/users
+Authorization: LetMeIn
+###
+GET http://localhost:8082/users/6607d086-7159-4c26-beb1-280c9f9cbf3
+###
+GET http://localhost:8082/users/search?gender=male&age=49
+Authorization: LetMeIn
+###
+GET http://localhost:8082/users/search?gender=-5
+###
+GET http://localhost:8082/users/search?age=49
+Authorization: LetMeIn
+###
+GET http://localhost:8082/users/search
+Authorization: LetMeIn
+###
+POST http://localhost:8082/blogs
+Content-Type: application/json
+
+{
+    "title": "Travel blog on Mussorie",
+    "authors": ["Aditya", "Alok", "Krushna"],
+    "content": "5 hidden gems of mussorie",
+    "publishedAt": null
+}
+###
+# POST http://localhost:8082/blogs
+# Content-Type: text/plain
+
+# Here is my blog
+
+###
+GET http://localhost:8082/blogs
+###
+GET http://localhost:8082/blogs/666dc0c163331ef57cfdbee9
+###
+DELETE http://localhost:8082/blogs/666dc4b6b038980a01f275d0
+###
+PATCH http://localhost:8082/blogs/666dc0c163331ef57cfdbee9
+Content-Type: application/json
+
+{
+    "title": "Travel blog on Peak District 😄",
+    "content": "Second best place in all of England"
+}
