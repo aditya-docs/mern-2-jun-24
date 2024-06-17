@@ -1,0 +1,26 @@
+GET http://localhost:8088/cities
+###
+GET http://localhost:8088/cities/WS73BG9vv0UIviBw8u9ll
+###
+POST http://localhost:8088/cities
+Content-Type: application/json
+Authorization: LetMeIn
+
+{
+    "name": "Kochi"
+}
+
+###
+PUT http://localhost:8088/cities/WS73BG9vv0UIviBw8u9ll
+Content-Type: application/json
+Authorization: LetMeIn
+
+{
+    "name": "Madurai",
+    "landmarks": [
+        {
+            "name": "Meenakshi Amman Temple",
+            "price": 50
+        }
+    ]
+}

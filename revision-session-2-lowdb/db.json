@@ -1,0 +1,72 @@
+{
+  "cities": [
+    {
+      "name": "New York",
+      "id": "5mG42Uhv3f_jidNmBnZJY"
+    },
+    {
+      "name": "Lucknow",
+      "id": "pcT3l72pEYjvhxCTODqJu"
+    },
+    {
+      "name": "New Delhi",
+      "id": "9TB2ognyaoBdZqw5_6dQv"
+    },
+    {
+      "name": "Chennai",
+      "id": "nwxH_vggnIwOoc68qzy5p"
+    },
+    {
+      "name": "Chennai",
+      "landmarks": [
+        {
+          "name": "parthasarathy temple",
+          "price": 0
+        }
+      ],
+      "id": "9Kdwf98k5KV7uAe5Yqq6j"
+    },
+    {
+      "name": "Bhubneshwar",
+      "landmarks": [
+        {
+          "name": "khandagiri caves",
+          "price": 20
+        },
+        {
+          "name": "udaygiri caves",
+          "price": 20
+        }
+      ],
+      "id": "MFCCp10GOgU0bmZbhGsEH"
+    },
+    {
+      "id": "z3Vf82LZ-ejp7JrOk39BE",
+      "name": "Kolkata",
+      "landmarks": [
+        {
+          "name": "Victoria Memorial",
+          "price": 100
+        }
+      ]
+    },
+    {
+      "id": "WS73BG9vv0UIviBw8u9ll",
+      "name": "Madurai",
+      "landmarks": [
+        {
+          "name": "Meenakshi Amman Temple",
+          "price": 50
+        }
+      ]
+    },
+    {
+      "name": "Coimbatore",
+      "id": "p-TD9xkvCEcKoC-PVN3dL"
+    },
+    {
+      "name": "Kochi",
+      "id": "vS6xRiXS-6_z3CT8C4cyp"
+    }
+  ]
+}
