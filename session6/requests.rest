@@ -24,7 +24,7 @@ POST http://localhost:8082/blogs
 Content-Type: application/json
 
 {
-    "title": "Travel blog on Mussorie 😃",
+    "title": "Travel blog on Rishikesh",
     "authors": [
         {
             "fullName": "Aditya Singh",
@@ -33,7 +33,7 @@ Content-Type: application/json
             "image": "https://img.com/profile_images/1438358493799452672/vNWqLAHP_400x400.jpg"
         }
     ],
-    "content": "hidden gems of MUSSORIE",
+    "content": "hidden gems of Rishikesh",
     "publishedAt": null
 }
 ###
@@ -45,20 +45,19 @@ Content-Type: application/json
 ###
 GET http://localhost:8082/blogs
 ###
-GET http://localhost:8082/blogs/666dc0c163331ef57cfdbee9
+GET http://localhost:8082/blogs/6671b1fd52d16cd9ba8626ad
 ###
 DELETE http://localhost:8082/blogs/666dc4b6b038980a01f275d0
 ###
-PATCH http://localhost:8082/blogs/666dc0c163331ef57cfdbee9
+PATCH http://localhost:8082/blogs/6671b1fd52d16cd9ba8626ad
 Content-Type: application/json
 
 {
-    "title": "Travel blog on Peak District 😄",
-    "content": "Second best place in all of England"
+    "title": "Travel blog on Rishikesh ❤️"
 }
 
 ###
-GET http://localhost:8082/blogs/search?title=🤣
+GET http://localhost:8082/blogs/search?title=district
 
 ###
-GET http://localhost:8082/blogs/search?author=john@resuminator.in
+GET http://localhost:8082/blogs/search?author=aditya@resuminator.in

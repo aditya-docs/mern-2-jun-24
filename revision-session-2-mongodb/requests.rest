@@ -1,13 +1,19 @@
 GET http://localhost:8088/cities
 ###
-GET http://localhost:8088/cities/WS73BG9vv0UIviBw8u9ll
+GET http://localhost:8088/cities/6677e4089abb45f3f3f550b9
 ###
 POST http://localhost:8088/cities
 Content-Type: application/json
 Authorization: LetMeIn
 
 {
-    "name": "Kochi"
+    "name": "Kolkata",
+    "landmarks": [
+        {
+            "name": "Victoria Memorial",
+            "price": 100
+        }
+    ]
 }
 
 ###

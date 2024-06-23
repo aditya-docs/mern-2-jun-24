@@ -1,6 +1,6 @@
-import Joi from "joi";
+const Joi = require("joi");
 
-const citySchema = Joi.object({
+const cityValidatonSchema = Joi.object({
   name: Joi.string().required(),
   landmarks: Joi.array().items(
     Joi.object({
@@ -10,7 +10,7 @@ const citySchema = Joi.object({
   ),
 });
 
-export default citySchema;
+module.exports = cityValidatonSchema;
 // name: string
 // landmarks?: array
 //     item: object

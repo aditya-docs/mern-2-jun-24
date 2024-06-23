@@ -1,12 +1,10 @@
-import citySchema from "../schemas/city.schema.js";
-
-const cityValidator = async (req, res, next) => {
-  try {
-    await citySchema.validateAsync(req.body);
+const validateSchema = (schema) => (req, res, next) => {
+  const { error } = schema.validate(req.body);
+  if (error) {
+    res.status(422).json(error);
+  } else {
     next();
-  } catch (err) {
-    return res.status(400).send({ message: err.details[0].message });
   }
 };
 
-export { cityValidator };
+module.exports = validateSchema;

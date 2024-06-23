@@ -1,8 +1,9 @@
-const Blog = require("../models/blog.model");
+const BlogService = require("../services/blog.service");
+const BlogServiceInstance = new BlogService();
 
-const getBlogs = async (req, res) => {
+const getBlogs = async (_, res) => {
   try {
-    res.send(await Blog.find());
+    res.send(await BlogServiceInstance.getAll());
   } catch (error) {
     res.status(500).send({ message: "Oops! Something went wrong" });
   }
@@ -11,7 +12,7 @@ const getBlogs = async (req, res) => {
 const getBlogById = async (req, res) => {
   const { id: blogId } = req.params;
   try {
-    const reqBlog = await Blog.findById(blogId);
+    const reqBlog = await BlogServiceInstance.getById(blogId);
     if (reqBlog) return res.send(reqBlog);
     res
       .status(404)
@@ -25,24 +26,11 @@ const getBlogById = async (req, res) => {
 
 const searchBlogs = async (req, res) => {
   const { title, author } = req.query;
-  // let numbers = [1, 2, 3, 4];
-  // let obj = { numbers };
-  // onj -> { numbers: [1, 2, 3, 4] }
-  console.log(author);
   try {
-    const reqBlogs = await Blog.find({
-      $or: [
-        {
-          title: { $regex: new RegExp(title), $options: "i" },
-        },
-        // {
-        //   authors: { $elemMatch: { email: { $eq: author } } },
-        // },
-        {
-          authors: { $elemMatch: { email: author } },
-        },
-      ],
-    });
+    const reqBlogs = await BlogServiceInstance.queryByTitleOrAuthor(
+      title,
+      author
+    );
     res.send(reqBlogs);
   } catch (error) {
     res.status(500).send({ message: "Oops! Something went wrong" });
@@ -53,12 +41,12 @@ const postBlog = async (req, res) => {
   const { title, authors, content, publishedAt } = req.body;
   try {
     //const newBlog = await Blog.create({ title, authors, content, publishedAt });
-    const newBlog = await new Blog({
+    const newBlog = await BlogServiceInstance.create({
       title,
       authors,
       content,
       publishedAt,
-    }).save();
+    });
     res.status(201).send(newBlog);
   } catch (error) {
     if (error.code === 11000) {
@@ -80,9 +68,7 @@ const postBlog = async (req, res) => {
 const updateBlogById = async (req, res) => {
   const { id: blogId } = req.params;
   try {
-    const result = await Blog.findByIdAndUpdate(blogId, req.body, {
-      new: true,
-    });
+    const result = await BlogServiceInstance.updateById(blogId, req.body);
     res.status(200).send(result);
   } catch (error) {
     res.status(500).send({ message: "Oops! Something went wrong" });
@@ -91,7 +77,7 @@ const updateBlogById = async (req, res) => {
 
 const deleteBlogById = async (req, res) => {
   try {
-    await Blog.findByIdAndDelete(req.params.id);
+    await BlogServiceInstance.deleteById(req.params.id);
     res.sendStatus(204);
   } catch (error) {
     res.status(500).send({ message: "Oops! Something went wrong" });

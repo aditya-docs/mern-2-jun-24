@@ -5,4 +5,4 @@ const verifyAdmin = (req, res, next) => {
     .send({ message: "You do not have permission to perform this action" });
 };
 
-export default verifyAdmin;
+module.exports = verifyAdmin;
